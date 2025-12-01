@@ -1,0 +1,267 @@
+<div class="container py-5">
+	<div class="row">
+		<div class="col-md-6 mx-auto">
+
+            <form action="<?= ($BASE.'/project/update') ?>" method="post" class="form-horizontal">
+		<div class="mb-3">
+  		  <div class="row">
+
+        <div class="mb-3">
+          <div class="row">
+    		<div class="col">
+      		  <label class="form-label" for="project_name"><?= ($i18n_project_name) ?></label>
+      		  <input type="text" class="form-control bg-primary bg-opacity-10" name="project_name" id="project_name" value="<?= ($POST['project_name']) ?>" required />
+    		</div>
+  		  </div>
+	    </div>
+
+        <div class="mb-3">
+          <div class="row">
+            <div class="col">
+      		  <label class="form-label" for="project_desc"><?= ($i18n_desc) ?></label>
+      		  <input type="text" class="form-control bg-primary bg-opacity-10" name="project_desc" id="project_desc"  value="<?= ($POST['project_desc']) ?>" required />
+              </div>
+            </div>
+          </div>
+
+
+        <div class="mb-3">
+          <div class="row row-cols-2 input-group-sm">        
+
+<div class="col">
+                        <label class="form-label" for="project_duedate"><?= ($i18n_date) ?></label>
+                <div class="input-group calendar mb-3">
+                    <input type="text" class="form-control datepicker6  bg-primary bg-opacity-10"  data-date-language="es" name="duedate" id="duedate" value="<?= ($current_project_duedate) ?>" autocomplete="off">
+                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-th fa-fw"></i></span>
+                </div>
+</div>
+<div class="col">
+                        <label class="form-label" for="project_duedate"><?= ($i18n_time) ?></label>
+                <div class="input-group input-group-sm mb-3">
+                    <input type="time" class="form-control bg-primary bg-opacity-10" id="duetime" name="duetime" value="<?= ($current_project_duetime) ?>" >
+                </div>
+</div>
+
+<div class="col">
+		    <label class="form-label" for="project_status"><?= ($i18n_type) ?></label>
+        <select class="form-select bg-primary bg-opacity-10" id="project_type" name="project_type" value="" required>
+            <!-- Pre-select the current task type -->
+            <!-- Pre-select the current task type -->
+            <option value="<?= (trim($project['project_type'])) ?>" selected>
+                <?= (trim($current_project_type_name))."
+" ?>
+            </option>           
+            <!-- Populate the dropdown with all task types -->
+            <?php foreach (($project_types?:[]) as $type_id=>$type_name): ?>
+                <option value="<?= ($type_id) ?>"><?= ($type_name) ?></option>
+            <?php endforeach; ?>
+        </select>
+
+</div> 
+
+<div class="col">
+		    <label class="form-label" for="project_status"><?= ($i18n_status) ?></label>
+        <select class="form-select bg-primary bg-opacity-10" id="project_status" name="project_status">
+            <!-- Pre-select the current task type -->
+            <option value="<?= (trim($project['project_status'])) ?>" selected>
+                <?= (trim($current_project_status_name))."
+" ?>
+            </option>
+
+            <!-- Populate the dropdown with all task types -->
+            <?php foreach (($project_statuses?:[]) as $status_id=>$status_name): ?>
+                <option value="<?= ($status_id) ?>"><?= ($status_name) ?></option>
+            <?php endforeach; ?>
+        </select>
+		</div>
+
+
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="row">
+            <div class="col">
+	    <input type="hidden" name="session_csrf" value="<?= ($CSRF) ?>" />
+            <input type="hidden" name="project_id" value="<?= ($POST['project_id']) ?>" />
+            <input type="hidden" name="update" value="update" />
+            <div class="col-lg-xs text-center"><button type="submit" class="btn btn-primary" aria-disabled="true"><i class="icon-edit icon-white"></i> Actualizar</button></div>
+            </div>
+          </div>
+        </div>	
+
+	   </form>
+	   
+    <hr>
+    
+    <div class="row">
+        <div class="col">
+            <div class="input-group mysearch-box">
+                <h2 class="inline"><?= ($i18n_collaborators) ?></h2>
+            </div> 
+        </div>
+
+        <div class="col">
+	        <a href="<?= ($BASE.'/user/listuser/' . $POST['project_id']) ?>" class="btn me-md-2 pull-right"><i style = "font-size: 2rem; color:#0d6efd" class="bi bi-plus-circle-fill" data-toggle="tooltip"></i></a>
+	        
+        </div>
+    </div>	   
+
+
+    <!-- INICIO Tabla Citas  -->
+    <div class="row">
+        <div class="table-responsive">
+	    <?php if ($collabs): ?>
+	        
+                <table id="mytable" class="table table-hover table-striped results"> 
+                <thead> 
+                <tr>
+        	        <th scope="col">C</th>
+        	        <th scope="col">E</th> 
+        	        <th scope="col">B</th>         	        
+        	        <th scope="col"><?= ($i18n_username) ?></th>
+        	        <th scope="col"><?= ($i18n_email) ?></th>
+        	        <th scope="col"><?= ($i18n_actionicon) ?></th>
+    		    </tr>
+    		    <tr class="warning no-result">
+      		        <td colspan="6"><i class="fa fa-warning"></i><?= ($i18n_noresult) ?></td>
+    		    </tr>
+                </thead> 
+                <tbody> 
+    		    <?php $count=0; foreach (($collabs?:[]) as $collab): $count++; ?>
+        	        <tr>
+			            <td> <!-- Create -->
+<?php if ($collab['user_rol'] == 1 || $collab['user_rol'] == 2 || $collab['user_rol'] == 4 || $collab['user_rol'] == 6 || $collab['user_rol'] == 8): ?>
+    
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked disabled> 
+    
+    <?php else: ?>
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" disabled>
+    
+<?php endif; ?>          	            
+                        </td>
+			            <td> <!-- Update -->
+<?php if ($collab['user_rol'] == 1 || $collab['user_rol'] == 2 || $collab['user_rol'] == 5 || $collab['user_rol'] == 6  || $collab['user_rol'] == 9): ?>
+    
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" checked disabled> 
+    
+    <?php else: ?>
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" disabled>
+    
+<?php endif; ?> 
+                        </td>
+			            <td> <!-- Delete -->
+<?php if ($collab['user_rol'] == 1 || $collab['user_rol'] == 2 || $collab['user_rol'] == 7 || $collab['user_rol'] == 8 || $collab['user_rol'] == 9): ?>
+    
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" checked disabled> 
+    
+    <?php else: ?>
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+    
+<?php endif; ?>
+                        </td>                        
+            		    <td><?= (trim($collab['username'])) ?></td>
+            		    <td><?= (trim($collab['email'])) ?></td>
+                 	    <td>
+                 	        
+                            <a href="<?= ($BASE.'/project/update/'. $collab['id'] . '/' . $project_id) ?>" title="<?= ($i18n_edit) ?>"><i style = "color:#FFC107" class="bi bi-pencil-fill" data-toggle="tooltip"></i></a>     
+
+		            <a data-href="<?= ($BASE.'/project/deletepu/'. $collab['id'] . '/' . $project_id) ?>" data-bs-toggle="modal" data-bs-target="#confirm-delete" title="<?= ($i18n_delete) ?>"><i style = "color:red;" class="bi bi-trash-fill" data-toggle="tooltip"></i></a>
+                	    </td>
+        	        </tr>
+    		    <?php endforeach; ?>
+                </tbody> 
+                </table> 
+	        
+	        <?php else: ?>
+  	            <div class="alert alert-warning" role="alert">
+     	            <?= ($i18n_noresultsearch)."
+" ?>
+  	            </div>
+	        
+	    <?php endif; ?>
+	    
+	    </div>
+    </div>
+    <!-- FIN Tabla Citas  -->
+  
+	   
+	</div>
+  </div>
+</div>
+
+<input type="hidden" id="modal" name="modal" value="<?= ($modal) ?>" />
+
+<!-- INICIO Bootstrap Modal Eliminar Registro Proyecto -->
+<div class="modal fade" id="confirm-delete" name="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+             <h4 class="modal-title">Borrar Registro</h4>
+             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <?= ($i18n_wantdelete)."
+" ?>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-bs-dismiss="modal"><?= ($i18n_cancel) ?></button>
+                <a class="btn btn-danger btn-ok"><?= ($i18n_delete) ?></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- INICIO Bootstrap Modal TodayTask -->
+<div class="modal fade" id="UserModal" tabindex="-1" aria-labelledby="UserModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+          <form id="userForm" method="POST" action="<?= ($BASE.'/project/updategrants') ?>">
+            <div class="modal-header">
+                <h5 class="modal-title" id="UserModalLabel">Los Datos del Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="user_id" name="user_id" value="<?= ($token) ?>" />
+                <input type="hidden" id="project_id" name="project_id" value="<?= ($project_id) ?>" />
+
+                <p><strong><?= ($i18n_username) ?>:</strong> <?= (trim($selected_user['username'])) ?></p>
+                <p><strong><?= ($i18n_email) ?>:</strong> <?= (trim($selected_user['email'])) ?></p>
+                <p><strong><?= ($i18n_permissions) ?>:</strong></p>                
+                
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="create" name="create">
+  <label class="form-check-label" for="create">
+    Crear
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="update" name="update">
+  <label class="form-check-label" for="update">
+    Editar
+  </label>
+</div>                
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="delete" name="delete">
+  <label class="form-check-label" for="delete">
+    Borrar
+  </label>
+</div>
+       
+
+                <!-- Display other person details here -->
+
+        	    <input type="hidden" name="session_csrf" value="<?= ($CSRF) ?>" />
+        	    <input type="hidden" name="inviteuser" value="inviteuser" />
+		        <p><?= ($i18n_wantinvite) ?></p>
+            </div>
+            <div class="modal-footer">
+		        <input type="button" class="btn btn-default" data-bs-dismiss="modal" value="<?= ($i18n_cancel) ?>">
+                <button type="submit" class="btn btn-primary"><?= ($i18n_update) ?></button>
+            </div>
+          </form>
+        </div>
+    </div>
+</div>
+<!-- FIN Bootstrap Modal TodayTask -->

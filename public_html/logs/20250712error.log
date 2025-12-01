@@ -1,0 +1,16 @@
+Sat, 12 Jul 2025 22:24:06 +0000 [178.255.127.138] 500: Undefined field activado trace: [lib/db/sql/mapper.php:132]
+Sat, 12 Jul 2025 22:24:06 +0000 [178.255.127.138] [lib/db/sql/mapper.php:132] user_error()
+Sat, 12 Jul 2025 22:24:06 +0000 [178.255.127.138] [lib/magic.php:89] DB\SQL\Mapper->get()
+Sat, 12 Jul 2025 22:24:06 +0000 [178.255.127.138] [lib/magic.php:131] Magic->offsetget()
+Sat, 12 Jul 2025 22:24:06 +0000 [178.255.127.138] [app/controllers/UserController.php:453] Magic->__get()
+Sat, 12 Jul 2025 22:24:06 +0000 [178.255.127.138] [lib/base.php:2072] UserController->create()
+Sat, 12 Jul 2025 22:24:06 +0000 [178.255.127.138] [lib/base.php:1871] Base->call()
+Sat, 12 Jul 2025 22:24:06 +0000 [178.255.127.138] [index.php:19] Base->run()
+Sat, 12 Jul 2025 22:30:07 +0000 [178.255.127.138] 500: Undefined field activado trace: [lib/db/sql/mapper.php:132]
+Sat, 12 Jul 2025 22:30:07 +0000 [178.255.127.138] [lib/db/sql/mapper.php:132] user_error()
+Sat, 12 Jul 2025 22:30:07 +0000 [178.255.127.138] [lib/magic.php:89] DB\SQL\Mapper->get()
+Sat, 12 Jul 2025 22:30:07 +0000 [178.255.127.138] [lib/magic.php:131] Magic->offsetget()
+Sat, 12 Jul 2025 22:30:07 +0000 [178.255.127.138] [app/controllers/UserController.php:453] Magic->__get()
+Sat, 12 Jul 2025 22:30:07 +0000 [178.255.127.138] [lib/base.php:2072] UserController->create()
+Sat, 12 Jul 2025 22:30:07 +0000 [178.255.127.138] [lib/base.php:1871] Base->call()
+Sat, 12 Jul 2025 22:30:07 +0000 [178.255.127.138] [index.php:19] Base->run()

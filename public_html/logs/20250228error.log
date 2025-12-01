@@ -1,0 +1,5 @@
+Fri, 28 Feb 2025 20:35:18 +0000 [193.128.108.246] 500: strcmp(): Passing null to parameter #1 ($string1) of type string is deprecated trace: [app/controllers/UserController.php:73]
+Fri, 28 Feb 2025 20:35:18 +0000 [193.128.108.246] [app/controllers/UserController.php:73] strcmp()
+Fri, 28 Feb 2025 20:35:18 +0000 [193.128.108.246] [lib/base.php:2072] UserController->confirm_registration()
+Fri, 28 Feb 2025 20:35:18 +0000 [193.128.108.246] [lib/base.php:1871] Base->call()
+Fri, 28 Feb 2025 20:35:18 +0000 [193.128.108.246] [index.php:19] Base->run()

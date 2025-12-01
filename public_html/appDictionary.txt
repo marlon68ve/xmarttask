@@ -1,0 +1,98 @@
+Task Status Codes
+    1 = 'Created',
+    2 = 'In Progress',
+    3 = 'Completed'
+    
+User Roles
+    Rol= 1     Grant = 'CEB'
+    Rol= 2     Grant = 'L'
+    Rol= 3     Grant = 'C'
+    Rol= 4     Grant = 'E'
+    Rol= 5     Grant = 'CE
+    
+    
+1 = "create,update,delete"
+2 = "create,update,delete"
+5 = "update"
+4 = "create"
+6 = "create,update"
+7 = "delete"
+8 = "create,delete"
+9 = "update,delete"    
+    
+    
+[person_task_type]
+1 = Qualification
+2 = Closing
+3 = Hiring
+4 = Interview
+5 = Negotiation
+6 = Presentation
+7 = Proposal
+8 = Prospecting
+9 = Meeting
+10 = Follow-up
+11 = Support
+
+[sales_task_type]
+1 = Lead Generation		
+2 = Prospecting
+3 = Qualification
+4 = Sales Presentation	
+5 = Negotiation
+6 = Closing
+7 = Follow-up
+8 = Support
+
+[construction_task_type]
+1 = Planning
+2 = Site Preparation	
+3 = Material Procurement
+4 = Installation
+5 = Change Order
+6 = Inspection	
+7 = Safety Compliance	
+8 = Project Handover	
+
+[swdev_task_type]
+1 = Requirements Gathering	
+2 = Design & Prototyping	
+3 = Development				
+4 = Code Review				
+5 = Testing & QA			
+6 = Deployment & Maintenance
+
+[generic_task_type]
+1 = Planning
+2 = Research
+3 = Design
+4 = Implementation
+5 = Testing
+6 = Documentation
+7 = Review
+8 = Approval
+9 = Communication
+10 = Procurement
+11 = Training
+12 = Closure
+
+[project_task_type]
+1 = Adjustments
+2 = Configuration
+3 = Documentation
+4 = Inspection
+5 = Installation
+6 = Planning
+7 = Preparation
+
+[task_status]
+1 = Completed
+2 = In Progress
+3 = Registered
+4 = Delayed
+
+[note_status]
+1 = Completed
+2 = In Progress
+3 = Registered
+4 = Delayed

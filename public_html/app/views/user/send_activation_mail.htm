@@ -1,0 +1,30 @@
+<div class="container py-5">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="row">
+				<div class="col-md-6 mx-auto">
+					<h1 class="prod-header">{{ @i18n_register }}</h1>
+					<p>{{ @i18n_send_registration_mail_again }}</p>
+					<form action="{{ @BASE }}" method="post" class="">
+
+						<input type="hidden" name="session_csrf" value="{{ @CSRF }}" />
+						<input type="hidden" name="sendmail" value="sendmail" />
+
+			    <div class="input-group mb-3">
+  				<span class="input-group-text"><i class="fa fa-envelope fa-fw"></i></span>
+  				<div class="form-floating">
+    				    <input id="email" name="email" type="text" class="form-control" placeholder="{{ @i18n_email }}"  required autofocus oninvalid="this.setCustomValidity('{{ @i18n_inemail }}')" oninput="setCustomValidity('')"/>
+    				    <label class="mb-2 text-muted" for="username">{{ @i18n_email }}</label>
+  				</div>
+			    </div>
+
+
+			    <div class="d-grid gap-2 d-md-flex justify-content-sm-center">
+				<button class="btn btn-primary" type="submit" name="reset_pw">{{ @i18n_resend_activation_mail }}</button>
+			    </div>						
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

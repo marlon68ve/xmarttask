@@ -1,0 +1,76 @@
+<div class="container py-5">
+	<div class="row">
+		<div class="col-12">
+		<h1>{{ @page_head }}</h1>
+          <check if="{{ @message }}">
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>{{ @message }}</strong>
+            </div>
+            </check>
+		</div>
+	</div>
+</div>
+
+<div class="form-group pull-right">
+    <span class="glyphicon glyphicon-search"></span><input type="text" id="myInput" class="search form-control" placeholder="Busqueda">
+</div>
+<div class="container">
+	<div class="row">
+	    <form class="col-md-4">
+	        <label>Filtrar</label>
+	        <select class="form-control select2" id="myCombo" onchange="myFunction()">
+	           <option>Select</option> 
+	           <option>Ana</option> 
+	           <option>Bike</option> 
+	           <option>Scooter</option> 
+	           <option>Cycle</option> 
+	           <option>Horse</option> 
+	        </select>
+	    </form>
+ 	</div>
+</div>
+<table width="600" cellpadding="5" class="table table-hover table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Accion</th>
+    </tr>
+    </thead>
+
+    <tbody id="userTbl">
+    <repeat group="{{ @persons }}" value="{{ @person }}">
+<check if="{{ trim(@person.p_status)=='Lead' }}">
+    <true>
+        <tr class="table-danger">
+            <td>{{ trim(@person.p_name) }}</td>
+            <td>{{ trim(@person.p_lname) }}</td>
+            <td>{{ trim(@person.p_phone) }}</td>
+            <td>{{ trim(@person.p_addr) }}</td>
+            <td><a href="{{ @BASE.'/person/update/'. @person.p_num }}" class="btn btn-primary"><i class="icon-edit icon-white"></i> Editar</a>
+                &nbsp; <a href="{{ @BASE.'/person/delete/'. @person.p_num }}" class="btn btn-danger"><i class="icon-remove icon-white"></i>
+                    Borrar</a></td>
+
+        </tr>
+    </true>
+    <false>
+        <tr>
+            <td>{{ trim(@person.p_name) }}</td>
+            <td>{{ trim(@person.p_lname) }}</td>
+            <td>{{ trim(@person.p_phone) }}</td>
+            <td>{{ trim(@person.p_addr) }}</td>
+            <td><a href="{{ @BASE.'/person/update/'. @person.p_num }}" class="btn btn-primary"><i class="icon-edit icon-white"></i> Editar</a>
+                &nbsp; <a href="{{ @BASE.'/person/delete/'. @person.p_num }}" class="btn btn-danger"><i class="icon-remove icon-white"></i>
+                    Borrar</a></td>
+
+        </tr>
+    </false>
+</check>
+    </repeat>
+
+    </tbody>
+
+</table>

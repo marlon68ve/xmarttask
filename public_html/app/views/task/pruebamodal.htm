@@ -1,0 +1,30 @@
+<main class="px-md-4 py-4">
+
+<!-- HTML for the initial user view -->
+<input type="text" id="phone" name="phone" placeholder="Enter phone number">
+<button id="search-button">Search</button>
+
+<!-- Modal for user information -->
+<div class="modal fade" id="user-modal" tabindex="-1" role="dialog" aria-labelledby="user-modal-label" aria-hidden="true">
+    <!-- Modal content goes here -->
+</div>
+
+<!-- Modal for user not found -->
+<div class="modal fade" id="user-not-found-modal" tabindex="-1" role="dialog" aria-labelledby="user-not-found-modal-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+             <h4 class="modal-title">No encontrado</h4>
+             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                Esta persona no se encuentra en la base de datos.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-bs-dismiss="modal">Cancelar</button>
+                <a class="btn btn-danger btn-ok">Aceptar</a>
+            </div>
+        </div>
+    </div>
+</div>
+</main>

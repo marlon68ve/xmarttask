@@ -1,0 +1,498 @@
+/**
+* Author: Marlon Ortiz
+* 
+*/
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .insights { margin-bottom: 20px; }
+        .chart-container { width: 80%; margin: auto; }
+
+
+
+/* Chart  */
+            .chart-wrapper
+            {
+                width: 24rem;
+                height: 24rem;
+            }
+            .debt-savings
+            {
+                margin-right: -15rem;
+            }
+            .needs
+            {
+                margin-left: -5.5rem;
+            }
+            .wants
+            {
+                margin-top: -6.8rem;
+            }
+
+/* Confetti efect  */
+/* Scoped styles for the modal */
+/* Basic modal styling */
+
+
+    .toast-container {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1055; /* Ensure it appears above other elements */
+    }
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+/*=--------------------------*/
+
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+/* Show it is fixed to the top */
+
+body {
+  min-height: 75rem;
+  padding-top: 4.5rem;
+}
+
+/* ====== Botton mobile navigation ====== */
+/* Mobile navigation styling */
+/*
+.mobile-nav {
+  background: #F1F1F1;
+  position: fixed;
+  bottom: 0;
+  height: 65px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around; */
+  /* Optional: Increase z-index if needed to ensure it appears above other elements */
+/*
+  z-index: 10;
+}
+
+.bloc-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bloc-icon img,
+.bloc-icon svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+*/
+/* Adjusted media query for larger screens */
+/*
+@media screen and (max-width: 799px) {
+  .mobile-nav {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .mobile-nav {
+    display: none;
+  }
+}*/
+/* ===========================  */
+
+/* Media query for small screens (e.g., less than 768px) */
+@media (max-width: 767.98px) {
+    body {
+        padding-top: 130px; /* Increased padding for small screens */
+    }
+}
+/*--- Mostrar varios elementos HTML en la misma linea, identificados con la clase 'inline' ----*/
+.inline {
+    display: inline-block;
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.main-section.backgnd {
+    background-image: url(../img/imagen.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: fixed;
+	background-color: rgb(233,233,233);
+	padding-top: 20px;
+	-webkit-background-size: 100% 100%;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+}
+
+
+@media only screen and (max-width: 576px) {
+  .table-responsive .d-none {
+    display: none;
+  }
+}
+
+/* Hide Datepicker on small screens */
+@media (max-width: 576px) {
+  .datepicker {
+    display: none;
+  }
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+}
+
+.b-example-divider {
+    height: 1rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 0.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.navbar-img-container {
+  max-height: 36px; /* Adjust the height as needed */
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin-right: 10px; /* Optional margin for spacing */
+}
+
+#p_name:invalid::before {
+    content: "Please enter a valid email address.";
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#p_name:valid::before {
+    content: "Email address is valid.";
+    color: green;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.orange {
+    color: #FB8C00;
+}
+
+
+/* Estilo aplicado al div de la tabla de datos para que tenga scrollbar   */
+    .table-responsive { 
+      overflow-y: auto; 
+      height: 360px; 
+    }
+
+
+
+/*--- Estilo aplicado al head de la tabla para que se mantenga estatica----*/
+    .table-responsive thead th { 
+      position: sticky; 
+      top: 0; 
+    } 
+
+/*--- Estilo aplicado a la tabla ----*/
+     table.table { 
+      border-collapse: collapse;         
+      width: 100%; 
+    } 
+
+    table.table td .view {
+        color: #03A9F4;
+    }
+    table.table td .edit {
+        color: #FFC107;
+
+    }
+    table.table td .delete {
+        color: #E34724;
+    }
+    
+    table.table td i {
+        font-size: 13px;
+    }
+
+    table.table th i {
+        font-size: 13px;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+
+    table.table td a {
+        color: #a0a5b1;
+        display: inline-block;
+        margin: 0 5px;
+    }
+
+    table.table th { 
+      background: #fcfcfc; 
+    }
+    table.table-striped tbody tr:nth-of-type(odd) {
+    	background-color: #fcfcfc;
+	}
+	table.table-striped .table-hover tbody tr:hover {
+		background: #f5f5f5;
+	}
+/*--- -------------------------------------- ----*/
+
+
+/*--- Estilo aplicado para obtener mensaje de resultado de busqueda en la tabla----*/
+.results tr[visible='false'],
+.no-result{
+  display:none;
+}
+
+.results tr[visible='true']{
+  display:table-row;
+}
+
+.counter{
+  padding:8px; 
+  color:#ccc;
+}
+/*------------------------------------------------------*/
+
+/* --- Modal styles --- */
+	.modal .modal-dialog {
+		max-width: 400px;
+	}
+	.modal .modal-header, .modal .modal-body, .modal .modal-footer {
+		padding: 20px 30px;
+	}
+	.modal .modal-content {
+		border-radius: 3px;
+	}
+	.modal .modal-footer {
+		background: #ecf0f1;
+		border-radius: 0 0 3px 3px;
+	}
+    .modal .modal-title {
+        display: inline-block;
+    }
+	.modal .form-control {
+		border-radius: 2px;
+		box-shadow: none;
+		border-color: #dddddd;
+	}
+	.modal textarea.form-control {
+		resize: vertical;
+	}
+	.modal .btn {
+		border-radius: 2px;
+		min-width: 100px;
+	}	
+	.modal form label {
+		font-weight: normal;
+	}
+/*--- ---------------------------- ----*/
+/*--- Estilo aplicado al search box ----*/
+    .search-box {
+        position: relative;        
+        float: right;
+    }
+    .search-box input {
+        height: 34px;
+        border-radius: 20px;
+        padding-left: 35px;
+        border-color: #ddd;
+        box-shadow: none;
+    }
+	.search-box input:focus {
+		border-color: #3FBAE4;
+	}
+    .search-box i {
+        color: #a0a5b1;
+        position: absolute;
+        font-size: 19px;
+        top: 8px;
+        left: 10px;
+    }
+
+/*--- Estilo aplicado al search box de Pacientes----*/
+.buscar{
+   position: relative;
+   box-shadow: 0 0 40px rgba(51, 51, 51, .1);
+}
+.buscar input{
+    height: 60px;
+    text-indent: 25px;
+    border: 2px solid #d6d4d4;
+}
+.buscar input:focus{
+    box-shadow: none;
+    border: 2px solid blue;
+}
+
+.icon-badge-group .icon-badge-container {
+    display: inline-block;
+    margin-left:15px;
+}
+
+.icon-badge-group .icon-badge-container:first-child { 
+  margin-left:0
+}
+
+.icon-badge-container {
+    margin-top:20px;
+    position:relative;
+}
+
+.icon-badge-icon {
+    font-size: 30px;
+    position: relative;
+}
+
+.icon-badge {
+    background-color: red;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    width:20px;
+    height:20px;
+    border-radius: 35%;
+    position: absolute; /* changed */
+    top: -5px; /* changed */
+    left: 18px; /* changed */
+}
+
+/*--------------------------------------------------------------
+# Error 404
+--------------------------------------------------------------*/
+.error-404 {
+  padding: 30px;
+}
+
+.error-404 h1 {
+  font-size: 180px;
+  font-weight: 700;
+  color: #4154f1;
+  margin-bottom: 0;
+  line-height: 150px;
+}
+
+.error-404 h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #012970;
+  margin-bottom: 30px;
+}
+
+.error-404 .btn {
+  background: #51678f;
+  color: #fff;
+  padding: 8px 30px;
+}
+
+.error-404 .btn:hover {
+  background: #3e4f6f;
+}
+
+@media (min-width: 992px) {
+  .error-404 img {
+    max-width: 50%;
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.footer {
+  padding: 20px 0;
+  font-size: 14px;
+  transition: all 0.3s;
+  border-top: 1px solid #cddfff;
+}
+
+.footer .copyright {
+  text-align: center;
+  color: #012970;
+}
+
+.footer .credits {
+  padding-top: 5px;
+  text-align: center;
+  font-size: 13px;
+  color: #012970;
+}

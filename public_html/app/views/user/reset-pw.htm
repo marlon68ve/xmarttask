@@ -1,0 +1,20 @@
+<div class="row justify-content-sm-center h-100">
+    <div class="col-md-8 col-lg-8">
+	<div class="card shadow-lg">
+	    <div class="card-body p-5">
+		<h1 class="display-6 fw-bold">{{ @i18n_reset_pw_submit }}</h1>
+	        <form action="" method="post" class="">
+        	    <p class="col-md-8 fs-4">{{ @i18n_reset_pw }}</p>
+		    <div class="form-floating mb-3">
+		    	<input id="email" type="text" class="form-control" placeholder="{{ @i18n_email }}" name="email" required oninvalid="this.setCustomValidity('{{ @i18n_inpassword }}')" oninput="setCustomValidity('')"/>
+		    	<label class="mb-2 text-muted" for="email">{{ @i18n_email }}</label>
+		    </div>
+		    <input type="hidden" name="session_csrf" value="{{ @CSRF }}" />
+		    <div class="d-grid gap-2 d-md-flex justify-content-sm-center">
+		    	<input class="btn btn-primary" name="reset_pw" value="{{ @i18n_reset_pw_submit }}" type="submit">
+		    </div>
+	        </form>
+	    </div>
+	</div>
+    </div>
+</div>

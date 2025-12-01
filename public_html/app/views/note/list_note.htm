@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+	<div class="col-12">
+	    <h1>{{ @page_head }}</h1>
+
+	    <check if="{{ isset(@SESSION.logged_in) && @SESSION.logged_in }}">
+		<true>
+
+    		    <repeat group="{{ @notes }}" value="{{ @note }}" counter="{{ @count }}">
+
+  		    <div class="toast show">
+    			<div class="toast-header">
+      			    <strong class="me-auto">{{ trim(@note.note_title) }}</strong>
+      			    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+    			</div>
+    			<div class="toast-body">
+    			    {{ trim(@note.note_content) }}
+    			    <div class="mt-2 pt-2 border-top">
+      			    	<a class="btn btn-sm btn-success" href="{{@SCHEME.'://'.@HOST.@BASE.'/'}}user/profile">Editar</a>
+      			    	<button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="toast">Cerrar</button>
+    			    </div>
+    		    	</div>
+  		     </div>
+
+
+    		    </repeat>
+
+		</true>
+		<false>
+		    <p>Congratulations on installing the Fat Free Login script. You are not logged in right now. </p>
+		    <p><a href="login">You can login here</a>.</p>
+		</false>
+	    </check>
+
+
+    <input type="hidden" id="pernum" name="pernum" value="{{ @pernum }}" />
+<!--    <input type="text" id="task_num" name="task_num" value="{{ @task_num }}" />
+    <input type="text" id="TodayTaskNum" name="TodayTaskNum" value="{{ @TodayTaskNum }}" />  -->
+    <input type="hidden" id="action" name="action" value="{{ @action }}" />
+    <input type="hidden" id="notedate" name="fechconsulta" value="{{ @notedate }}" />
+    <input type="hidden" id="htaskdate" name="hfechcita" value="{{ @htaskdate }}" />
+
+
+	</div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+<div class="container py-5">
+	<div class="row">
+		<div class="col-md-6 mx-auto">
+
+			<h1>{{ @i18n_create_person }}</h1>
+          <check if="{{ @message }}">
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>{{ @message }}</strong>
+            </div>
+            </check>
+
+            <form action="{{ @BASE.'/person/update' }}" method="post" class="form-horizontal">
+		  <div class="form-group">
+			<label class="control-label" for="pname">{{ @i18n_pname }}</label>
+			<div class="form-field"><input type="text" class="form-control input-lg" name="p_name" id="p_name" value="{{ @POST.p_name }}" required />
+		  </div></div>
+
+		  <div class="form-group">
+			<label class="control-label" for="plname">{{ @i18n_plname }}</label>
+			<div class="form-field"><input type="text" class="form-control input-lg" name="p_lname" id="p_lname" value="{{ @POST.p_lname }}" required />
+		  </div></div>
+
+		  <div class="form-group">
+			<label class="control-label" for="pgender">{{ @i18n_pgender }}</label>
+			<div class="form-field"><input type="text" class="form-control input-lg" name="p_gender" id="p_gender" value="{{ @POST.p_gender }}" required />
+		  </div></div>
+
+		  <div class="form-group">
+			<label class="control-label" for="page">{{ @i18n_page }}</label>
+			<div class="form-field"><input type="text" class="form-control input-lg" name="p_age" id="p_age" value="{{ @POST.p_age }}" required />
+		  </div></div>
+
+		  <div class="form-group">
+	 		<label class="control-label" for="pmarital">{{ @i18n_pmaritals }}</label>
+			<div class="form-field"><input type="text" class="form-control input-lg" name="p_maritals" id="p_maritals" value="{{ @POST.p_maritals }}" required />
+		  </div></div>
+
+		  <div class="form-group">
+	 		<label class="control-label" for="pphone">{{ @i18n_pphone }}</label>
+			<div class="form-field"><input type="text" class="form-control input-lg" name="p_phone" id="p_phone" value="{{ @POST.p_phone }}" required />
+		  </div></div>
+
+
+		  <div class="form-group">
+	 		<label class="control-label" for="paddr">{{ @i18n_paddr }}</label>
+			<div class="form-field"><input type="text" class="form-control input-lg" name="p_addr" id="p_addr" value="{{ @POST.p_addr }}" required />
+		  </div></div>
+
+    <div class="control-group">
+        <div class="">
+	    <input type="hidden" name="session_csrf" value="{{ @CSRF }}" />
+            <input type="hidden" name="p_num" value="{{ @POST.p_num }}" />
+            <input type="hidden" name="update" value="update" />
+            <button type="submit" class="btn btn-primary"><i class="icon-edit icon-white"></i> Actualizar</button>
+        </div>
+    </div>
+
+</form>
+
+		</div>
+	</div>
+</div>

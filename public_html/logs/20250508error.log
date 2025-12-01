@@ -1,0 +1,18 @@
+Thu, 08 May 2025 14:42:38 +0000 [188.127.240.187] MAIL ERROR: SMTP Error: The following recipients failed: lovlylile@yahoo.com: An email sent to this address has been rejected with the reason 'Mailbox does not exist' within the last 30 days. Check for typos in the email, or ensure that this subscriber is not a part of your mailing list. To send an email to this address, contact the support team once you are sure the mailbox has been created
+Thu, 08 May 2025 19:11:00 +0000 [185.130.251.117] 500: Undefined field activado trace: [lib/db/sql/mapper.php:132]
+Thu, 08 May 2025 19:11:00 +0000 [185.130.251.117] [lib/db/sql/mapper.php:132] user_error()
+Thu, 08 May 2025 19:11:00 +0000 [185.130.251.117] [lib/magic.php:89] DB\SQL\Mapper->get()
+Thu, 08 May 2025 19:11:00 +0000 [185.130.251.117] [lib/magic.php:131] Magic->offsetget()
+Thu, 08 May 2025 19:11:00 +0000 [185.130.251.117] [app/controllers/UserController.php:453] Magic->__get()
+Thu, 08 May 2025 19:11:00 +0000 [185.130.251.117] [lib/base.php:2072] UserController->create()
+Thu, 08 May 2025 19:11:00 +0000 [185.130.251.117] [lib/base.php:1871] Base->call()
+Thu, 08 May 2025 19:11:00 +0000 [185.130.251.117] [index.php:19] Base->run()
+Thu, 08 May 2025 20:34:13 +0000 [188.127.254.59] MAIL ERROR: SMTP Error: The following recipients failed: jayamrol22@gmail.com: An email sent to this address has been rejected with the reason 'Mailbox does not exist' within the last 30 days. Check for typos in the email, or ensure that this subscriber is not a part of your mailing list. To send an email to this address, contact the support team once you are sure the mailbox has been created
+Thu, 08 May 2025 20:47:02 +0000 [91.219.151.72] 500: Undefined field activado trace: [lib/db/sql/mapper.php:132]
+Thu, 08 May 2025 20:47:02 +0000 [91.219.151.72] [lib/db/sql/mapper.php:132] user_error()
+Thu, 08 May 2025 20:47:02 +0000 [91.219.151.72] [lib/magic.php:89] DB\SQL\Mapper->get()
+Thu, 08 May 2025 20:47:02 +0000 [91.219.151.72] [lib/magic.php:131] Magic->offsetget()
+Thu, 08 May 2025 20:47:02 +0000 [91.219.151.72] [app/controllers/UserController.php:453] Magic->__get()
+Thu, 08 May 2025 20:47:02 +0000 [91.219.151.72] [lib/base.php:2072] UserController->create()
+Thu, 08 May 2025 20:47:02 +0000 [91.219.151.72] [lib/base.php:1871] Base->call()
+Thu, 08 May 2025 20:47:02 +0000 [91.219.151.72] [index.php:19] Base->run()

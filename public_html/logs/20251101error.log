@@ -1,0 +1,18 @@
+Sat, 01 Nov 2025 19:14:36 +0000 [54.38.234.228] 500: strcmp(): Passing null to parameter #1 ($string1) of type string is deprecated trace: [app/controllers/UserController.php:73]
+Sat, 01 Nov 2025 19:14:36 +0000 [54.38.234.228] [app/controllers/UserController.php:73] strcmp()
+Sat, 01 Nov 2025 19:14:36 +0000 [54.38.234.228] [lib/base.php:2072] UserController->confirm_registration()
+Sat, 01 Nov 2025 19:14:36 +0000 [54.38.234.228] [lib/base.php:1871] Base->call()
+Sat, 01 Nov 2025 19:14:36 +0000 [54.38.234.228] [index.php:19] Base->run()
+Sat, 01 Nov 2025 19:41:56 +0000 [54.37.100.113] 500: strcmp(): Passing null to parameter #1 ($string1) of type string is deprecated trace: [app/controllers/UserController.php:73]
+Sat, 01 Nov 2025 19:41:56 +0000 [54.37.100.113] [app/controllers/UserController.php:73] strcmp()
+Sat, 01 Nov 2025 19:41:56 +0000 [54.37.100.113] [lib/base.php:2072] UserController->confirm_registration()
+Sat, 01 Nov 2025 19:41:56 +0000 [54.37.100.113] [lib/base.php:1871] Base->call()
+Sat, 01 Nov 2025 19:41:56 +0000 [54.37.100.113] [index.php:19] Base->run()
+Sat, 01 Nov 2025 21:49:57 +0000 [196.251.114.153] 500: Undefined field activado trace: [lib/db/sql/mapper.php:132]
+Sat, 01 Nov 2025 21:49:57 +0000 [196.251.114.153] [lib/db/sql/mapper.php:132] user_error()
+Sat, 01 Nov 2025 21:49:57 +0000 [196.251.114.153] [lib/magic.php:89] DB\SQL\Mapper->get()
+Sat, 01 Nov 2025 21:49:57 +0000 [196.251.114.153] [lib/magic.php:131] Magic->offsetget()
+Sat, 01 Nov 2025 21:49:57 +0000 [196.251.114.153] [app/controllers/UserController.php:453] Magic->__get()
+Sat, 01 Nov 2025 21:49:57 +0000 [196.251.114.153] [lib/base.php:2072] UserController->create()
+Sat, 01 Nov 2025 21:49:57 +0000 [196.251.114.153] [lib/base.php:1871] Base->call()
+Sat, 01 Nov 2025 21:49:57 +0000 [196.251.114.153] [index.php:19] Base->run()

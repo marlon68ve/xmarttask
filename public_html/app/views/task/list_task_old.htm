@@ -1,0 +1,299 @@
+<main class="px-md-4 py-4">
+
+    <!-- INICIO FILA mensajes alertas  -->
+    <div class="container py-1">
+        <div class="row">
+            <div class="col-12">
+              <check if="{{ @message }}">
+                <check if="{{ trim(@alertType)=='success' }}">
+                    <true>
+                        <div class="alert alert-success d-flex align-items-center" role="alert">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    <strong>{{ @message }}</strong>
+                            </div>
+
+                    </true>
+                    <false>
+                        <div class="alert alert-danger d-flex align-items-center" role="alert">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    <strong>{{ @message }}</strong>
+                            </div>
+
+                    </false>
+
+                </check>
+
+              </check>
+            </div>
+        </div>
+    </div>
+    <!-- FIN FILA mensajes alertas  --> 
+
+<div id="alerta"></div>
+<form action="task/listtask" method="post" class="" id="tasks"> 
+    <input type="hidden" id="mTodayDate" name="mTodayDate" value="{{ @todaydate }}" />
+    <!-- INICIO FILA de calendario y campos de texto   -->
+    <div class="container content">
+    <div class="row">
+    <div class="col-md-4">
+    <div id="divstyle">
+
+	<div class="row">
+	    <div class="col">
+	        <p style="font-weight: bold;">{{ @i18n_date }}</p>
+	    </div>
+	    <div class="col">
+	    	<!-- <a class="btn report btn-primary btn-sm" href="{{ @BASE.'/tasksummary/'. @todaydate }}" data-bs-toggle="modal" data-bs-target="#editEmployeeModal" class="edit" role="button">Resumen</a>  -->
+		<a class="btn report btn-primary btn-sm" href="{{ @BASE.'/task/listtask/'. @todaydate }}/btnresumen" name="btnsummary" role="button">Resumen</a>
+	    </div>
+	</div>
+					
+        <div class="input-group calendar mb-3">
+            <input type="text" class="form-control datepicker1 d-sm-none"  data-date-language="es" id="datepicker1" value="{{ @datepicker }}" autocomplete="off">
+            <span class="input-group-text d-sm-none" id="basic-addon1"><i class="fa fa-th fa-fw"></i></span>
+        </div>
+        <div class="input-group mb-3">
+
+    	    <!-- INICIO de Datepicker Inline para pantalla grande-->
+	    <div class="form-control datepicker2 d-none d-sm-block" id="datepick2" data-date-language="es" data-date-today-btn="linked" data-date-today-highlight="true" data-date="{{ @datepicker }}"></div>
+		<input type="hidden" id="my_hidden_input">
+    		<!-- FIN de Datepicker -->
+            </div>
+
+	</div>
+    </div>
+
+    <div class="col-sm-12 col-md-8">
+	<div id="sandbox">
+            <!-- <label for="date">Fecha  -->
+            <input class="span2 col-md-2 form-control form-control-sm" id="date" type ="hidden" name="date" value="{{ @datepicker }}" placeholder="dd/mm/yyyy">
+	</div>
+
+	<div class="mb-3">
+	    <div class="row">
+		<div class="col"> 
+              	    <label class="control-label" for="task_time">{{ @i18n_task_time }}</label>
+                    <input type="text" class="form-control form-control-sm bg-primary bg-opacity-10" name="task_time" id="task_time" disabled />
+              	</div>
+            	<div class="col">
+              	    <label class="control-label" for="myPersonPhone">{{ @i18n_person_phone }}</label>
+		    <!-- OJO:   tuve que cambiar el nombre de este input porque estaba en conflicto con el del modal abajo  -->
+                    <input type="text" class="form-control form-control-sm bg-primary bg-opacity-10" name="myPersonPhone" id="myPersonPhone" value="" disabled />
+              	</div>
+            	<div class="col">
+              	    <label class="control-label" for="cedpaci">{{ @i18n_person_num }}</label>
+                    <input type="text" class="form-control form-control-sm bg-primary bg-opacity-10" name="CedPaci" id="CedPaci" disabled />
+              	</div>
+            </div>
+	</div>
+
+	<div class="mb-3">
+  	    <div class="row">
+    		<div class="col">
+      		    <label class="form-label" for="person_name">{{ @i18n_person_name }}</label>
+      		    <input type="text" class="form-control form-control-sm bg-primary bg-opacity-10" id="person_name" name="person_name" disabled />
+    		</div>
+    		<div class="col">
+      		    <label class="form-label" for="person_lname">{{ @i18n_person_lname }}</label>
+      		    <input type="text" class="form-control form-control-sm bg-primary bg-opacity-10" name="person_lname" id="person_lname" disabled />
+    		</div>
+    		<!-- 	<div class="col">
+      		  	    <label class="form-label" for="condicioncita">{{ @i18n_condicioncita }}</label>
+      		  	    <input type="text" class="form-control form-control-sm bg-primary bg-opacity-10" id="condicioncita" name="condicioncita" disabled />
+    			</div> -->
+		<div class="col">
+		    <label class="form-label" for="TaskStatus">{{ @i18n_t_status }}</label>
+		    <select class="form-select bg-primary bg-opacity-10" id="TaskStatus" name="TaskStatus" disabled>
+			<option value=""></option>
+			<option value="task">task</option>
+			<option value="Control">Control</option>
+			<option value="Cortesia">Cortesia</option>
+			<option value="Facturado">Facturado</option>
+			<option value="Pago sin factura">Pago sin factura</option>
+			<option value="Seguro">Seguro</option>
+			<option value="Sin atender">Sin atender</option>
+  		    </select>
+		</div>
+	    </div>
+	</div>
+
+	<div class="mb-4">
+            <div class="row">
+        	<div class="col">
+
+
+        					<div class="col-lg-xs text-center">
+                                <!-- <input class="btn btn-primary" value="Consulta" name="btnconsulta" id="btnconsulta">  -->
+                                <input class="btn btn-lg btn-primary" type="submit" name="btnupdatetask" id="btnupdatetask" value="{{ @i18n_update }}" disabled />
+							</div>
+            			</div>
+          			</div>
+        		</div>	
+
+<!-- INICIO Barra de Busqueda  -->
+<div class="mb-3">
+    <div class="row">
+        <div class="col">
+           <div class="input-group mysearch-box">
+              	<input type="text"  id="searchInput" class="search form-control form-control-sm bg-primary bg-opacity-10" placeholder="{{ @i18n_placeholdersearch }}" name="q" >
+              	<!-- <button class="btn btn-outline-secondary"  type="submit" name="btnFindPerson">{{ @i18n_btnsearch }}</button>  -->
+				  <input class="btn btn-lg btn-success" type="submit"  name="btnFindPerson" id="btnFindPerson" value="{{ @i18n_btnsearch }}" />
+           		<span class="counter pull-right"></span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FIN Barra de Busqueda  -->
+
+			</div>
+
+    	</div>
+	</div>
+
+<!-- FIN FILA calendario y campos de texto   -->
+
+    <!-- INICIO Tabla  -->
+    <div class="row">
+       <div class="table-responsive">
+          <table id="mytable" class="table table-hover table-striped results">
+             <thead>
+                <tr>
+        	   <th class="d-none d-sm-table-cell" scope="col">{{ @i18n_date }}</th>
+        	   <th class="d-none d-sm-table-cell" scope="col">{{ @i18n_task_time }}</th>
+        	   <th scope="col">{{ @i18n_person_num  }}</th>
+        	   <th scope="col">{{ @i18n_person_name }}</th>
+        	   <th scope="col">{{ @i18n_person_lname }}</th>
+        	   <th scope="col">{{ @i18n_t_status }}</th>
+        	   <th scope="col">{{ @i18n_actionicon }}</th>
+    		</tr>
+    		<tr class="warning no-result">
+      		   <td colspan="6"><i class="fa fa-warning"></i> No tiene historia registrada o no tiene task para este dia</td>
+    		</tr>
+    	     </thead>
+
+    	     <tbody>
+    		<repeat group="{{ @tasks }}" value="{{ @task }}">
+		        <check if="{{ trim(@task.task_status)=='Completado' }}">
+    		        <true>
+        	            <tr class="table-success">
+      		        </true>
+    		        <false>
+        	            <tr>
+    		        </false>
+		        </check>        	          
+            		<td class="d-none d-sm-table-cell">{{ trim(@task.task_date) }}</td>
+            		<td class="d-none d-sm-table-cell">{{ trim(@task.task_time) }}</td>
+            		<td>{{ trim(@task.person_num) }}</td>
+            		<td>{{ trim(@task.person_name) }}</td>
+            		<td>{{ trim(@task.person_lname) }}</td>
+            		<td>{{ trim(@task.task_status) }}</td>
+			        <td class="d-none">{{ trim(@task.task_num) }}</td>
+                 	<td>
+                     	 <a href="{{ @BASE.'/person/update/'. @task.person_phone }}" title="{{ @i18n_edit }}"><i style = "color:#03A9F4;" class="bi bi-person-fill" data-toggle="tooltip"></i></a>
+			            <a href="{{ @BASE.'/note/listnote/'. @task.person_phone . '/' . @task.task_num }}" title="{{ @i18n_notes }}"><i style = "color:orange;" class="bi bi-file-text-fill" data-toggle="tooltip"></i></a>
+                            <a data-href="{{ @BASE.'/task/delete/'. @task.task_num }}" data-bs-toggle="modal" data-bs-target="#confirm-delete" title="{{ @i18n_delete }}"><i  style = "color:red;" class="bi bi-trash-fill" data-toggle="tooltip"></i></a>
+			            <span class="badge inline text-bg-primary pull-right">{{ trim(@task.note_count) }}</span>
+                	</td>
+        	      </tr>
+
+    		</repeat>
+   	     </tbody>
+
+	  </table>
+	</div>
+     </div>
+    <!-- INICIO Tabla  -->
+
+
+<div class="b-example-divider"></div>
+
+            <input type="hidden" id="cfech" name="cfech" value="" />
+	    <input type="hidden" id="referring_view" value="list_task">
+
+</form>
+
+
+<!-- INICIO Bootstrap Modal Eliminar Registro de task -->
+<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+             <h4 class="modal-title">{{ @i18n_deletereg }}</h4>
+             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                {{ @i18n_wantdelete }}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-bs-dismiss="modal">{{ @i18n_cancel }}</button>
+                <a class="btn btn-danger btn-ok">{{ @i18n_delete }}</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Resumen de tasks Modal HTML -->
+<div id="resumenCitasModal" role="dialog" class="modal fade" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form id="resumen">
+				<div class="modal-header">						
+					<h4 class="modal-title">Resumen de tasks</h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">	
+					<p><strong>{{ @fechapicker }}</strong></p>				
+					<input type="hidden" id="nFechHoy" name="nFechHoy" value="{{ @fechoy }}" />
+					<div class="container-fluid">
+						<div class="row">
+						<div class="col-md-12">
+
+						<div class="mb-3">
+							<div class="row">
+								<repeat group="{{ @arraycount }}" value="{{ @count }}">
+								<div class="col-sm-4 g-2">
+									<label class="form-label" for="mSinAtender">{{ @count.CondicionCita }}</label>
+									<input type="text" class="form-control form-control-sm bg-primary bg-opacity-10" id="mSinAtender" name="mSinAtender" value="{{ trim(@count.count) }}" disabled />
+							</div>
+								</repeat>
+								  
+							</div>
+						  </div>
+
+						</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" id="btncancelar" name="btncancelar" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+					<!-- <button type="button" id="btnimprimir" name="btnimprimir" class="btn btn-info" data-bs-dismiss="modal">Imprimir</button> -->
+					<a class="btn report btn-primary" href="{{ @BASE.'/tasksummary/'. @todaydate }}" name="btnprint" role="button">Imprimir</a>
+					<!-- <input type="submit" class="btn btn-info" value="Imprimir"> -->
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- INICIO Bootstrap Modal CitaHoy -->
+<div class="modal fade" id="ListTaskModal" tabindex="-1" aria-labelledby="ListTaskModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+<!-- FIN Bootstrap Modal taskHoy -->
+
+<!-- Nuevo Paciente Modal HTML -->
+<div id="newPersonModal" class="modal fade" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+		</div>
+	</div>
+</div>
+
+<input type="hidden" id="modal" name="modal" value="{{ @modal }}" />
+</main>

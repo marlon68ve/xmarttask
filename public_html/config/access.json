@@ -1,0 +1,11 @@
+{
+    "ACCESS": {
+        "policy": "pallow",
+        "rules": {
+            "DENY /admin*": [0],
+            "DENY /user*": [0],
+            "ALLOW /admin*": [100],
+            "ALLOW /user*": [1, 10, 20, 100]
+        }
+    }
+}

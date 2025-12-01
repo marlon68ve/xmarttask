@@ -1,0 +1,15 @@
+<main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+<include href="site_specific/adminmenu.htm" />
+<h1>No access</h1>
+<p>Please log in</p>
+<form action="{{ @BASE }}" method="post" class="form-signin">
+
+	<input type="text" class="form-control" placeholder="Email" name="nomusuario" id="nomusuario" required autofocus>
+	<input type="password" class="form-control" placeholder="Password" name="claveusuario" id="claveusuario" required>
+	<input type="hidden" name="login" value="login" />
+	<input type="hidden" name="session_csrf" value="{{ @CSRF }}" />
+	<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+
+</form>
+</main>
+

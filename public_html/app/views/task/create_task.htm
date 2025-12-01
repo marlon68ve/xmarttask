@@ -1,0 +1,82 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <h1>{{ @i18n_create_person }}</h1>
+      <check if="{{ @message }}">
+        <div class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <strong>{{ @message }}</strong>
+        </div>
+      </check>
+
+	  <form action="{{ @BASE.'/registerperson' }}" method="post" class="">
+
+		<div class="mb-3">
+  		  <div class="row">
+    		<div class="col">
+      		  <label class="form-label" for="pname">{{ @i18n_pname }}</label>
+      		  <input type="text" class="form-control bg-primary bg-opacity-10" name="p_name" id="p_name" required />
+    		</div>
+    		<div class="col">
+      		  <label class="form-label" for="plname">{{ @i18n_plname }}</label>
+      		  <input type="text" class="form-control bg-primary bg-opacity-10" name="p_lname" id="p_lname" required />
+    		</div>
+  		  </div>
+	    </div>
+
+        <div class="mb-3">
+          <div class="row">
+            <div class="col">
+              <label class="control-label" for="pgender">{{ @i18n_pgender }}</label>
+              <div class="form-field">
+                   <input type="text" class="form-control bg-primary bg-opacity-10" name="p_gender" id="p_gender" required />
+              </div>
+            </div>
+            <div class="col">
+              <label class="control-label" for="page">{{ @i18n_page }}</label>
+              <div class="form-field">
+                   <input type="text" class="form-control bg-primary bg-opacity-10" name="p_age" id="p_age" required />
+              </div>
+            </div>
+            <div class="col">
+              <label class="control-label" for="pmarital">{{ @i18n_pmaritals }}</label>
+              <div class="form-field">
+                   <input type="text" class="form-control bg-primary bg-opacity-10" name="p_maritals" id="p_maritals" required />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="row">
+            <div class="col">
+              <label class="form-label" for="pphone">{{ @i18n_pphone }}</label>
+              <div class="form-field"><input type="tel" class="form-control bg-primary bg-opacity-10" name="p_phone" id="p_phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required/>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mb-3">
+          <div class="row">
+            <div class="col">
+              <label class="control-label" for="paddr">{{ @i18n_paddr }}</label>
+              <div class="form-field"><input type="text" class="form-control bg-primary bg-opacity-10" name="p_addr" id="p_addr" required />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="row">
+            <div class="col">
+        	<input type="hidden" name="session_csrf" value="{{ @CSRF }}" />
+        	<input type="hidden" name="createperson" value="createperson" />
+        	<div class="col-lg-xs text-center"><input class="btn btn-primary" value="{{ @i18n_reg_per }}" name="createperson" id="createperson" type="submit"></div>
+            </div>
+          </div>
+        </div>				  
+	   </form>
+	</div>
+  </div>
+</div>

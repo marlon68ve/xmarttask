@@ -1,0 +1,4 @@
+    'i18n_accept'=>'Accept',
+    'i18n_account_update' => 'Update account',
+    'i18n_actionicon' => 'Action',
+    'i18n_activated' => 'Activated',

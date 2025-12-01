@@ -1,0 +1,33 @@
+Tue, 13 May 2025 10:19:58 +0000 [91.219.151.72] 500: Undefined field activado trace: [lib/db/sql/mapper.php:132]
+Tue, 13 May 2025 10:19:58 +0000 [91.219.151.72] [lib/db/sql/mapper.php:132] user_error()
+Tue, 13 May 2025 10:19:58 +0000 [91.219.151.72] [lib/magic.php:89] DB\SQL\Mapper->get()
+Tue, 13 May 2025 10:19:58 +0000 [91.219.151.72] [lib/magic.php:131] Magic->offsetget()
+Tue, 13 May 2025 10:19:58 +0000 [91.219.151.72] [app/controllers/UserController.php:453] Magic->__get()
+Tue, 13 May 2025 10:19:58 +0000 [91.219.151.72] [lib/base.php:2072] UserController->create()
+Tue, 13 May 2025 10:19:58 +0000 [91.219.151.72] [lib/base.php:1871] Base->call()
+Tue, 13 May 2025 10:19:58 +0000 [91.219.151.72] [index.php:19] Base->run()
+Tue, 13 May 2025 11:45:11 +0000 [188.127.224.110] 500: Undefined field activado trace: [lib/db/sql/mapper.php:132]
+Tue, 13 May 2025 11:45:11 +0000 [188.127.224.110] [lib/db/sql/mapper.php:132] user_error()
+Tue, 13 May 2025 11:45:11 +0000 [188.127.224.110] [lib/magic.php:89] DB\SQL\Mapper->get()
+Tue, 13 May 2025 11:45:11 +0000 [188.127.224.110] [lib/magic.php:131] Magic->offsetget()
+Tue, 13 May 2025 11:45:11 +0000 [188.127.224.110] [app/controllers/UserController.php:453] Magic->__get()
+Tue, 13 May 2025 11:45:11 +0000 [188.127.224.110] [lib/base.php:2072] UserController->create()
+Tue, 13 May 2025 11:45:11 +0000 [188.127.224.110] [lib/base.php:1871] Base->call()
+Tue, 13 May 2025 11:45:11 +0000 [188.127.224.110] [index.php:19] Base->run()
+Tue, 13 May 2025 15:03:17 +0000 [188.127.235.246] 500: Undefined field activado trace: [lib/db/sql/mapper.php:132]
+Tue, 13 May 2025 15:03:17 +0000 [188.127.235.246] [lib/db/sql/mapper.php:132] user_error()
+Tue, 13 May 2025 15:03:17 +0000 [188.127.235.246] [lib/magic.php:89] DB\SQL\Mapper->get()
+Tue, 13 May 2025 15:03:17 +0000 [188.127.235.246] [lib/magic.php:131] Magic->offsetget()
+Tue, 13 May 2025 15:03:17 +0000 [188.127.235.246] [app/controllers/UserController.php:453] Magic->__get()
+Tue, 13 May 2025 15:03:17 +0000 [188.127.235.246] [lib/base.php:2072] UserController->create()
+Tue, 13 May 2025 15:03:17 +0000 [188.127.235.246] [lib/base.php:1871] Base->call()
+Tue, 13 May 2025 15:03:17 +0000 [188.127.235.246] [index.php:19] Base->run()
+Tue, 13 May 2025 21:49:04 +0000 [188.127.240.207] 500: Undefined field activado trace: [lib/db/sql/mapper.php:132]
+Tue, 13 May 2025 21:49:04 +0000 [188.127.240.207] [lib/db/sql/mapper.php:132] user_error()
+Tue, 13 May 2025 21:49:04 +0000 [188.127.240.207] [lib/magic.php:89] DB\SQL\Mapper->get()
+Tue, 13 May 2025 21:49:04 +0000 [188.127.240.207] [lib/magic.php:131] Magic->offsetget()
+Tue, 13 May 2025 21:49:04 +0000 [188.127.240.207] [app/controllers/UserController.php:453] Magic->__get()
+Tue, 13 May 2025 21:49:04 +0000 [188.127.240.207] [lib/base.php:2072] UserController->create()
+Tue, 13 May 2025 21:49:04 +0000 [188.127.240.207] [lib/base.php:1871] Base->call()
+Tue, 13 May 2025 21:49:04 +0000 [188.127.240.207] [index.php:19] Base->run()
+Tue, 13 May 2025 21:59:33 +0000 [188.127.235.246] MAIL ERROR: SMTP Error: The following recipients failed: mperna1@townisp.com: An email sent to this address has been rejected with the reason 'Mailbox does not exist' within the last 30 days. Check for typos in the email, or ensure that this subscriber is not a part of your mailing list. To send an email to this address, contact the support team once you are sure the mailbox has been created
