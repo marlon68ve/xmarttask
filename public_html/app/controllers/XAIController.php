@@ -13,7 +13,9 @@ class XAIController extends Controller {
             return;
         }
 
-        $xaiService = new XAIService($this->f3->get('X_API_KEY'), $this->db);
+	$xaiKey = getenv('XAI_API_KEY');
+        //$xaiService = new XAIService($this->f3->get('X_API_KEY'), $this->db);
+	$xaiService = new XAIService($xaiKey, $this->db);
         
         $insights = $xaiService->analyzeTaskData($prompt);
 die('entro'.'  '.$this->f3->get('X_API_KEY'));        

@@ -7,7 +7,9 @@ class OpenAIController extends Controller {
 
     public function __construct() {
         parent::__construct();  // Call parent constructor to ensure proper setup
-        $this->openAIService = new OpenAIService($this->f3->get('OPENAI_API_KEY'));// Initialize OpenAIService with API key
+	$openaiKey = getenv('OPENAI_API_KEY');
+        //$this->openAIService = new OpenAIService($this->f3->get('OPENAI_API_KEY'));// Initialize OpenAIService with API key
+	$this->openAIService = new OpenAIService($openaiKey);// Initialize OpenAIService with API key
     }
 
     // Method to display the input form
