@@ -1,8 +1,0 @@
-Tue, 02 Sep 2025 17:43:15 +0000 [188.127.245.19] 500: Undefined field activado trace: [lib/db/sql/mapper.php:132]
-Tue, 02 Sep 2025 17:43:15 +0000 [188.127.245.19] [lib/db/sql/mapper.php:132] user_error()
-Tue, 02 Sep 2025 17:43:15 +0000 [188.127.245.19] [lib/magic.php:89] DB\SQL\Mapper->get()
-Tue, 02 Sep 2025 17:43:15 +0000 [188.127.245.19] [lib/magic.php:131] Magic->offsetget()
-Tue, 02 Sep 2025 17:43:15 +0000 [188.127.245.19] [app/controllers/UserController.php:453] Magic->__get()
-Tue, 02 Sep 2025 17:43:15 +0000 [188.127.245.19] [lib/base.php:2072] UserController->create()
-Tue, 02 Sep 2025 17:43:15 +0000 [188.127.245.19] [lib/base.php:1871] Base->call()
-Tue, 02 Sep 2025 17:43:15 +0000 [188.127.245.19] [index.php:19] Base->run()

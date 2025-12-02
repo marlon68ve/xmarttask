@@ -1,5 +1,0 @@
-Mon, 20 Jan 2025 20:14:15 -0500 [2603:9000:f801:55e2:5169:f09f:10c1:6b1f] 401: HTTP 401 (GET /task/taskData) trace: [/home/u991737198/domains/tas2023.online/public_html/lib/access.php:112] Base->error()
-Mon, 20 Jan 2025 20:14:15 -0500 [2603:9000:f801:55e2:5169:f09f:10c1:6b1f] [/home/u991737198/domains/tas2023.online/public_html/app/controllers/Controller.php:78] Access->authorize()
-Mon, 20 Jan 2025 20:14:15 -0500 [2603:9000:f801:55e2:5169:f09f:10c1:6b1f] [/home/u991737198/domains/tas2023.online/public_html/lib/base.php:2069] Controller->beforeroute()
-Mon, 20 Jan 2025 20:14:15 -0500 [2603:9000:f801:55e2:5169:f09f:10c1:6b1f] [/home/u991737198/domains/tas2023.online/public_html/lib/base.php:1871] Base->call()
-Mon, 20 Jan 2025 20:14:15 -0500 [2603:9000:f801:55e2:5169:f09f:10c1:6b1f] [/home/u991737198/domains/tas2023.online/public_html/index.php:19] Base->run()

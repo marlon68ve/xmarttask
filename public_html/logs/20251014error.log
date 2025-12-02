@@ -1,9 +1,0 @@
-Tue, 14 Oct 2025 02:39:46 +0000 [13.89.227.44] 500: Unable to open admin/update.htm trace: [lib/base.php:3290]
-Tue, 14 Oct 2025 02:39:46 +0000 [13.89.227.44] [lib/base.php:3290] user_error()
-Tue, 14 Oct 2025 02:39:46 +0000 [13.89.227.44] [tmp/3hn69l4qoa804.3cndbbhzhn8ko.php:19] Preview->render()
-Tue, 14 Oct 2025 02:39:46 +0000 [13.89.227.44] [lib/base.php:3036] require('/home/u991737198/domains/tas2023.online/public_html/tmp/3hn69l4qoa804.3cndbbhzhn8ko.php')
-Tue, 14 Oct 2025 02:39:46 +0000 [13.89.227.44] [lib/base.php:3281] View->sandbox()
-Tue, 14 Oct 2025 02:39:46 +0000 [13.89.227.44] [app/controllers/Controller.php:90] Preview->render()
-Tue, 14 Oct 2025 02:39:46 +0000 [13.89.227.44] [lib/base.php:2078] Controller->afterroute()
-Tue, 14 Oct 2025 02:39:46 +0000 [13.89.227.44] [lib/base.php:1871] Base->call()
-Tue, 14 Oct 2025 02:39:46 +0000 [13.89.227.44] [index.php:19] Base->run()

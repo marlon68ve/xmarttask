@@ -1,5 +1,0 @@
-Wed, 05 Nov 2025 20:35:21 +0000 [2607:fb92:1c85:c6c:7df2:9e15:c348:b6ff] 401: HTTP 401 (GET /person/listperson) trace: [lib/access.php:112] Base->error()
-Wed, 05 Nov 2025 20:35:21 +0000 [2607:fb92:1c85:c6c:7df2:9e15:c348:b6ff] [app/controllers/Controller.php:78] Access->authorize()
-Wed, 05 Nov 2025 20:35:21 +0000 [2607:fb92:1c85:c6c:7df2:9e15:c348:b6ff] [lib/base.php:2069] Controller->beforeroute()
-Wed, 05 Nov 2025 20:35:21 +0000 [2607:fb92:1c85:c6c:7df2:9e15:c348:b6ff] [lib/base.php:1871] Base->call()
-Wed, 05 Nov 2025 20:35:21 +0000 [2607:fb92:1c85:c6c:7df2:9e15:c348:b6ff] [index.php:19] Base->run()
